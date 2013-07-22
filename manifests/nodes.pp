@@ -1,5 +1,6 @@
 # nodes.pp
 
-node default {
+node 'puppet-client.nicira.eng.vmware.com' {
   include ntp
+  include db
   }
