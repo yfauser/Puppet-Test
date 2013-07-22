@@ -1,11 +1,11 @@
-Class ntp {
-      package { 'ntp':
-        ensure => installed,
-      }
-      service { 'ntp':
-        name      => $service_name,
-        ensure    => running,
-        enable    => true,
-        subscribe => File['ntp.conf'],
-      }
-    }
+class ntp {
+  package { 'ntp':
+    ensure => installed,
+  }
+  service { 'ntp':
+    name      => 'ntp',
+    ensure    => running,
+    require   => Package['ntp'],
+    enable    => true,
+  }
+}
